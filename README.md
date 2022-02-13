@@ -22,7 +22,7 @@ Run the docker command, but edit out `DATASET` and `DATASET_FILEPATH` (more on t
 
 ```
 docker run -ti --rm \
--v $(pwd)/data:/home/aspera \
+-v $(pwd):/home/aspera \
 aspera-client-docker \
 DATASET DATASET_FILE_PATH .
 ```
@@ -45,12 +45,23 @@ In this case, dataset is `idr0040` and the filepath is `20180215/3105/Pos0/`
 
 ```
 docker run -ti --rm \
--v $(pwd)/data:/home/aspera \
+-v $(pwd):/home/aspera \
 aspera-client-docker \
 idr0040 20180215/3105/Pos0/ .
 ```
 
 According to the website (https://github.com/IDR/idr-metadata), you can get the filepaths from the tsv files. However, for `idr0010`, the filepaths aren't shown in the tsv. Therefore, try the above workflow
+
+## Another example
+
+Here we download one that is bit more trick from idr0010. Use the above example as a guide and see how the command applies below.
+
+```
+docker run -ti --rm \
+-v $(pwd):/home/aspera \
+aspera-client-docker \
+idr0010 20150501-original/Restored\ GW\ screen/1-23 .
+```
 
 # Changes to fork
 
