@@ -1,5 +1,21 @@
-IDR Download
-============
+# Setup
+
+**Build.**
+
+`docker build -t aspera-client-docker .`
+
+# Usage
+
+**Download.**
+
+```
+docker run -ti --rm \
+-v $(pwd)/data:/home/aspera \
+aspera-client-docker \
+idr0040 20180215/3105/Pos0/img_000000001_07-YFPtriple_000.tif .
+```
+
+# IDR Download
 
 The https://hub.docker.com/r/imagedata/download image can be used to acquire
 the original files which were imported into IDR:
@@ -54,3 +70,7 @@ You can modify additional variables as well
 | ASCP_SERVER | NA | fasp.ebi.ac.uk | host |
 
 For a more detailed description of these commands, see the [ascp documentation](https://www.ibm.com/docs/en/aci/3.9.2?topic=ascp-command-reference).
+
+# Changes to fork
+
+- Dockerfile works of `/home/aspera` instead of `/tmp`.
