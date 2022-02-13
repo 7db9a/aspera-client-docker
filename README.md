@@ -54,7 +54,7 @@ According to the website (https://github.com/IDR/idr-metadata), you can get the 
 
 ## Another example
 
-Here we download one that is bit more trick from idr0010. Use the above example as a guide and see how the command applies below.
+Here we download all of idr0010. Use the above example as a guide and see how the command applies below.
 
 ```
 docker run -ti --rm \
