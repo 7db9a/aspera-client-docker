@@ -73,4 +73,4 @@ For a more detailed description of these commands, see the [ascp documentation](
 
 # Changes to fork
 
-- Dockerfile works of `/home/aspera` instead of `/tmp`.
+Dockerfile works of `/home/aspera` instead of `/tmp`. Otherwise, you can't mount `/tmp` to your host dir.
