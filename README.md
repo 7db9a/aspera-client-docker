@@ -27,28 +27,19 @@ DATASET DATASET_FILE_PATH .
 
 ## Example
 
-**To see this in practice on a partial download of the idr0040 dataset:**
+Below demonstrates how to do a partial download of the idr0040 dataset.
 
-
-**Here is a an alternative:**
-
-To get the file path:
-
-**Find your dataset:**
+**Find your dataset.**
 
 https://idr.openmicroscopy.org/webclient
 
-**Get the file path**
+**Get the file path.**
 
-On the `General` tab on right pane, select the file path icon with the tooltip "Show file path on server". You'll have to select the dir or file for the pane to show up, as of the current state of the website.
+On the `General` tab on right pane, select the file path icon with the tooltip "Show file path on server". You'll have to select the dir or file for the pane to show up, as of the current state of the website. The path it gives is `uod/idr/filesets/idr0040-aymoz-singlecell/20180215/3105/Pos0/`.
 
-The path it gives is:
+In this case, dataset is `idr0040` and the filepath is `20180215/3105/Pos0/`
 
-`uod/idr/filesets/idr0040-aymoz-singlecell/20180215/3105/Pos0/`
-
-The dataset is `idr0040` and the filepath is `20180215/3105/Pos0/`
-
-The corresponding command would then be:
+**Download**
 
 ```
 docker run -ti --rm \
