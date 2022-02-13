@@ -29,9 +29,6 @@ DATASET DATASET_FILE_PATH .
 
 **To see this in practice on a partial download of the idr0040 dataset:**
 
-According to the website, you can get the filepaths from the tsv files. However, for `idr0010`, the filepaths aren't shown in the tsv.
-
-https://github.com/IDR/idr-metadata
 
 **Here is a an alternative:**
 
@@ -59,6 +56,8 @@ docker run -ti --rm \
 aspera-client-docker \
 idr0040 20180215/3105/Pos0/ .
 ```
+
+According to the website (https://github.com/IDR/idr-metadata), you can get the filepaths from the tsv files. However, for `idr0010`, the filepaths aren't shown in the tsv. Therefore, try the above workflow
 
 # IDR Download
 
