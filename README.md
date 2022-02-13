@@ -1,6 +1,4 @@
-Download IDR data using a containerized aspera client. Some may find this much more simple and ergonomic to https://github.com/IDR/aspera-client-docker, which was forked and changed here within.
-
-Downlaod
+Download IDR data using a containerized aspera client.
 
 # Setup
 
@@ -55,5 +53,7 @@ idr0040 20180215/3105/Pos0/ .
 According to the website (https://github.com/IDR/idr-metadata), you can get the filepaths from the tsv files. However, for `idr0010`, the filepaths aren't shown in the tsv. Therefore, try the above workflow
 
 # Changes to fork
+
+https://github.com/IDR/aspera-client-docker.
 
 Dockerfile works of `/home/aspera` instead of `/tmp`. Otherwise, you can't mount `/tmp` to your host dir.
