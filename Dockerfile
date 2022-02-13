@@ -1,5 +1,4 @@
 FROM centos:centos7
-MAINTAINER ome-devel@lists.openmicroscopy.org.uk
 
 RUN useradd data
 USER data
@@ -21,4 +20,5 @@ ENV ASCP_RETRANSFER_FILE 0
 ENV ASCP_PORT 33001
 ENV ASCP_SERVER fasp.ebi.ac.uk
 ADD ascp.sh /usr/local/bin/ascp.sh
+WORKDIR /home/aspera
 ENTRYPOINT ["/usr/local/bin/ascp.sh"]
