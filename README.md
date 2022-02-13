@@ -12,7 +12,42 @@
 docker run -ti --rm \
 -v $(pwd)/data:/home/aspera \
 aspera-client-docker \
-idr0040 20180215/3105/Pos0/img_000000001_07-YFPtriple_000.tif .
+DATASET DATASET_FILE_PATH .
+```
+
+## Example
+
+Partial download of the idr0040 dataset (single image).
+
+According to the website, you can get the filepaths from the tsv files. However, for `idr0010`, the filepaths aren't shown in the tsv.
+
+https://github.com/IDR/idr-metadata
+
+**Here is alternative:**
+
+To get the file path:
+
+**Find your dataset:**
+
+https://idr.openmicroscopy.org/webclient
+
+**Get the file path**
+
+On the `General` tab on right pane, select the file path icon with the tooltip "Show file path on server"
+
+You'll have to select the dir or file for the pane to show up, as of the current state of the website.
+
+So for example, the path to:
+
+`uod/idr/filesets/idr0040-aymoz-singlecell/20180215/3105/Pos0/`
+
+The dataset is `idr0040` and the filepath is `20180215/3105/Pos0/`
+
+```
+docker run -ti --rm \
+-v $(pwd)/data:/home/aspera \
+aspera-client-docker \
+idr0040 20180215/3105/Pos0/ .
 ```
 
 # IDR Download
