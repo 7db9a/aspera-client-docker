@@ -8,6 +8,16 @@
 
 **Download.**
 
+Make the dir where you want the data to be downloaded to.
+
+`mkdir DIR`
+
+Enter the dir.
+
+`cd DIR`
+
+Run the docker command, but edit out `DATASET` and `DATASET_FILEPATH` (more on that below).
+
 ```
 docker run -ti --rm \
 -v $(pwd)/data:/home/aspera \
@@ -17,13 +27,13 @@ DATASET DATASET_FILE_PATH .
 
 ## Example
 
-Partial download of the idr0040 dataset (single image).
+**To see this in practice on a partial download of the idr0040 dataset:**
 
 According to the website, you can get the filepaths from the tsv files. However, for `idr0010`, the filepaths aren't shown in the tsv.
 
 https://github.com/IDR/idr-metadata
 
-**Here is alternative:**
+**Here is a an alternative:**
 
 To get the file path:
 
@@ -33,15 +43,15 @@ https://idr.openmicroscopy.org/webclient
 
 **Get the file path**
 
-On the `General` tab on right pane, select the file path icon with the tooltip "Show file path on server"
+On the `General` tab on right pane, select the file path icon with the tooltip "Show file path on server". You'll have to select the dir or file for the pane to show up, as of the current state of the website.
 
-You'll have to select the dir or file for the pane to show up, as of the current state of the website.
-
-So for example, the path to:
+The path it gives is:
 
 `uod/idr/filesets/idr0040-aymoz-singlecell/20180215/3105/Pos0/`
 
 The dataset is `idr0040` and the filepath is `20180215/3105/Pos0/`
+
+The corresponding command would then be:
 
 ```
 docker run -ti --rm \
