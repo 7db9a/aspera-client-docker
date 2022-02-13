@@ -1,24 +1,8 @@
 Download IDR data using a containerized aspera client.
 
-# Setup
-
-**Build.**
-
-`docker build -t aspera-client-docker .`
-
 # Usage
 
 **Download.**
-
-Make the dir where you want the data to be downloaded to.
-
-`mkdir DIR`
-
-Enter the dir.
-
-`cd DIR`
-
-Run the docker command, but edit out `DATASET` and `DATASET_FILEPATH` (more on that below).
 
 ```
 docker run -ti --rm \
@@ -26,8 +10,15 @@ docker run -ti --rm \
 aspera-client-docker \
 DATASET DATASET_FILE_PATH .
 ```
+Edit out `DATASET` and `DATASET_FILEPATH` (more on that below). FYI it will download to your current directory.
 
-## Example
+# Setup
+
+**Build.**
+
+`docker build -t aspera-client-docker .`
+
+# Usage Example
 
 Below demonstrates how to do a partial download of the idr0040 dataset.
 
@@ -52,9 +43,9 @@ idr0040 20180215/3105/Pos0/ .
 
 According to the website (https://github.com/IDR/idr-metadata), you can get the filepaths from the tsv files. However, for `idr0010`, the filepaths aren't shown in the tsv. Therefore, try the above workflow
 
-## Another example
+# Another example
 
-Here we download all of idr0010. Use the above example as a guide and see how the command applies below.
+Here we do a partial download of idr0010, the 1-23 series. Use the above example as a guide and see how the command applies below.
 
 ```
 docker run -ti --rm \
@@ -65,6 +56,6 @@ idr0010 20150501-original/Restored\ GW\ screen/1-23 .
 
 # Changes to fork
 
-https://github.com/IDR/aspera-client-docker.
+https://github.com/IDR/aspera-client-docker
 
 Dockerfile works of `/home/aspera` instead of `/tmp`. Otherwise, you can't mount `/tmp` to your host dir.
